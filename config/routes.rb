@@ -1,9 +1,8 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
   devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root 'categories#index'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :categories, only: [:index, :new, :show, :create] do
+    resources :entities, only: [:index, :new, :create]
+  end
 end
