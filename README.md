@@ -58,6 +58,18 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://budgetpro.onrender.com)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🎥 Video presesntation <a name="video-demo"></a>
+
+- [Video presentation](https://drive.google.com/file/d/1THwN1YM60P8RUpRjJzaj5X759qQKAVmk/view?usp=sharing)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
