@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe EntitiesController, type: :controller do
   include Devise::Test::ControllerHelpers
 
   let(:user) { User.create(name: 'John Doe', email: 'john@example.com', password: 'password') }
-  let(:category) { Category.create(name: 'Category', user: user) }
-  let(:entity) { Entity.create(name: 'Entity', amount: 100, category: category) }
-  let(:entity1) { Entity.create(name: 'Entity 1', amount: 200, category: category) }
+  let(:category) { Category.create(name: 'Category', user:) }
+  let(:entity) { Entity.create(name: 'Entity', amount: 100, category:) }
+  let(:entity1) { Entity.create(name: 'Entity 1', amount: 200, category:) }
 
   before { sign_in user }
 
@@ -50,9 +52,9 @@ RSpec.describe EntitiesController, type: :controller do
   describe 'POST #create' do
     context 'with valid parameters' do
       it 'creates a new entity' do
-        expect {
+        expect do
           post :create, params: { category_id: category.id, entity: { name: 'New Entity', amount: 100 } }
-        }.to change(Entity, :count).by(1)
+        end.to change(Entity, :count).by(1)
       end
 
       it 'assigns the newly created entity to @entity' do
@@ -77,9 +79,9 @@ RSpec.describe EntitiesController, type: :controller do
 
     context 'with invalid parameters' do
       it 'does not create a new entity' do
-        expect {
+        expect do
           post :create, params: { category_id: category.id, entity: { name: '', amount: 100 } }
-        }.not_to change(Entity, :count)
+        end.not_to change(Entity, :count)
       end
 
       it 'assigns a new unsaved entity to @entity' do
@@ -97,4 +99,3 @@ RSpec.describe EntitiesController, type: :controller do
     end
   end
 end
- 

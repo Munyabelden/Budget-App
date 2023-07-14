@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe CategoriesController, type: :controller do
@@ -35,9 +37,9 @@ RSpec.describe CategoriesController, type: :controller do
 
     context 'with valid parameters' do
       it 'creates a new category' do
-        expect {
+        expect do
           post :create, params: { category: { name: 'New Category' } }
-        }.to change(Category, :count).by(1)
+        end.to change(Category, :count).by(1)
       end
 
       it 'assigns the newly created category to @category' do
@@ -62,9 +64,9 @@ RSpec.describe CategoriesController, type: :controller do
 
     context 'with invalid parameters' do
       it 'does not create a new category' do
-        expect {
+        expect do
           post :create, params: { category: { name: '' } }
-        }.not_to change(Category, :count)
+        end.not_to change(Category, :count)
       end
 
       it 'assigns a new unsaved category to @category' do

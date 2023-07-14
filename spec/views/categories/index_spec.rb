@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.feature 'Categories', type: :feature do
@@ -7,8 +9,8 @@ RSpec.feature 'Categories', type: :feature do
 
   before do
     login_as(user, scope: :user)
-    Category.create(name: 'Category 1', icon: 'icon', user: user)
-    Category.create(name: 'Category 2', icon: 'icon', user: user)
+    Category.create(name: 'Category 1', icon: 'icon', user:)
+    Category.create(name: 'Category 2', icon: 'icon', user:)
     visit categories_path
   end
 

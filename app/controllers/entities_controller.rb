@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EntitiesController < ApplicationController
   before_action :authenticate_user!
 
@@ -9,7 +11,7 @@ class EntitiesController < ApplicationController
 
   def show
     @entity = Entity.find(params[:id])
-  end  
+  end
 
   def new
     @category = Category.find(params[:category_id])
@@ -24,7 +26,7 @@ class EntitiesController < ApplicationController
     @entity.categories = Category.where(id: params[:entity][:category_ids])
 
     if @entity.save
-      redirect_to category_entities_path(@category), notice: "Entity created successfully."
+      redirect_to category_entities_path(@category), notice: 'Entity created successfully.'
     else
       render :new
     end

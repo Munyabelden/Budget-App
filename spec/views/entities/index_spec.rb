@@ -1,15 +1,17 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.feature 'Entities', type: :feature do
   include Devise::Test::IntegrationHelpers
 
   let(:user) { User.create(name: 'John Doe', email: 'john@example.com', password: 'password') }
-  let(:category) { Category.create(name: 'Category', user: user) }
+  let(:category) { Category.create(name: 'Category', user:) }
 
   before do
     login_as(user, scope: :user)
     Entity.create(name: 'Transaction 1', amount: 100)
-    Entity.create(name: 'Transaction 2', amount: 200) 
+    Entity.create(name: 'Transaction 2', amount: 200)
     visit category_entities_path(category)
   end
 
