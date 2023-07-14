@@ -168,6 +168,6 @@ I would like to thank Gregoire Vella on Behance for the original design idea.
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://github.com/Munyabelden/Budget-App/blob/main/LICENSE) licensed.
+This project is [MIT](https://github.com/Munyabelden/Budget-App/blob/feature/app/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

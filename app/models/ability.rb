@@ -3,11 +3,10 @@ class Ability
 
   def initialize(user)
     can :read, all
-    
+
     return unless user.present?
 
-      can :manage, Category, author_id: user.id
-      can :manage, Entity, author_id: user.id
-    end
+    can :manage, Category, user_id: user.id
+    can :manage, Entity, user_id: user.id
   end
 end
