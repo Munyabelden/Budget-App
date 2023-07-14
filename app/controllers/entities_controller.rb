@@ -1,4 +1,3 @@
-# app/controllers/entities_controller.rb
 class EntitiesController < ApplicationController
   before_action :authenticate_user!
 
@@ -7,6 +6,10 @@ class EntitiesController < ApplicationController
     @entities = @category.entities.order(created_at: :desc)
     @total_amount = @category.entities.sum(:amount)
   end
+
+  def show
+    @entity = Entity.find(params[:id])
+  end  
 
   def new
     @category = Category.find(params[:category_id])

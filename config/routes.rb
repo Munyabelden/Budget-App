@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'categories#index'
 
-  resources :categories, only: [:index, :new, :show, :create] do
-    resources :entities, only: [:index, :new, :create]
+  unauthenticated do
+    root to: "home#index", as: "home_root"
+  end
+
+  root "categories#index"
+
+  resources :categories, only: [:index, :new, :create] do
+    resources :entities, only: [:index, :show, :new, :create]
   end
 end

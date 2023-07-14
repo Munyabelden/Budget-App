@@ -1,24 +1,19 @@
-<!-- app/views/transactions/index.html.erb -->
-<h1><%= @category.name %> Transactions</h1>
+<div class="devise-head">
+  <a class="back" href="<%= categories_path %>"><i class="fa-solid fa-arrow-left"></i></a>
+  <h1>Transactions</h1>
+  <i class="fa-solid fa-magnifying-glass"></i>
+</div>
 
-<p>Total Amount: <%= @total_amount %></p>
+<div class="category-card">
+  <h2><%= @category.name %></h2>
+  <strong>Total Amount: $<%= @total_amount %></strong>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Amount</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @entities.each do |transaction| %>
-      <tr>
-        <td><%= transaction.name %></td>
-        <td><%= transaction.amount %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @entities.each do |transaction| %>
+  <a class="card" href="<%= category_entity_path(@category, transaction)%>">
+    <h2><%= transaction.name %></h2>
+    <span>$<%= transaction.amount %></span>
+  </a>
+<% end %>
 
-<%= link_to "Add a new transaction", new_category_entity_path(@category) %>
-<%= link_to "Back", categories_path %>
+<%= link_to "Add a new transaction", new_category_entity_path(@category), class: "new-category" %>

@@ -1,3 +1,9 @@
+<div class="devise-head">
+  <a class="back" href="<%= category_entities_path(@category) %>"><i class="fa-solid fa-arrow-left"></i></a>
+  <h2 class="devise-title">Create Transaction</h2>
+  <span></span>
+</div>
+<section class="devise-form">
 <%= form_with(model: [@category, @entity], url: category_entities_path(@category)) do |form| %>
   <% if @entity.errors.any? %>
     <div id="error_explanation">
@@ -11,22 +17,20 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, placeholder: "Transaction name" %>
   </div>
 
   <div class="field">
-    <%= form.label :amount %>
-    <%= form.number_field :amount %>
+    <%= form.number_field :amount, placeholder: "Amount" %>
   </div>
 
   <div class="field">
-    <%= form.label :category_ids, "Categories" %>
-    <%= form.collection_check_boxes :category_ids, Category.all, :id, :name %>
+    <%= form.select :category_ids, options_from_collection_for_select(Category.all, :id, :name) %>
   </div>
+
 
   <div class="actions">
-    <%= form.submit "Save" %>
-    <%= link_to "Back", category_entities_path(@category) %>
+    <%= form.submit "Save", class: "submit-button" %>
   </div>
 <% end %>
+</section>

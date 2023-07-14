@@ -1,1 +1,174 @@
-*= require font-awesome
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.back {
+  color: #fff;
+  font-size: 22px;
+}
+
+.sr-only {
+  display: none;
+  position: absolute;
+}
+
+.devise-title {
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* Login and Sign up forms */
+
+.devise-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  margin-top: 20px;
+}
+
+.devise-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  background: #3778c2;
+  color: #fff;
+  padding-block: 15px;
+  padding-inline: 7px;
+}
+
+/* #434b54 #5fb523 #3778c2*/
+
+.devise-form input,
+.devise-form select {
+  min-width: 100vw;
+  padding: 15px;
+  border: 1px solid #434b54;
+  font-size: 20px;
+}
+
+.devise-form .submit-button {
+  width: fit-content;
+  border: none;
+  background: none;
+  color: #434b54;
+}
+
+.add-ons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #434b54;
+  margin-top: 150px;
+}
+
+.add-ons a {
+  color: #434b54;
+}
+
+/* Splash page(Landing page) */
+
+.splash-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.splash-page .app-name {
+  color: #434b54;
+  justify-self: center;
+  align-self: center;
+}
+
+.splash-page .login {
+  background: #3778c2;
+  color: #fff;
+  padding: 15px 100px;
+  margin: 5px;
+  font-size: 18px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.splash-page ul li {
+  margin-top: 40px;
+  margin-inline: auto;
+  text-align: center;
+  width: 100vw;
+}
+
+.splash-page .signup {
+  position: relative;
+  color: #434b54;
+  padding: 15px 100px;
+  margin-top: 15px;
+  font-size: 18px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+/* Categories/index.html */
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px auto;
+  width: 90%;
+  padding: 10px 20px;
+  background: #f3f7fb;
+  color: #434b54;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.icon {
+  font-size: 40px;
+  margin-right: 10px;
+}
+
+.new-category {
+  position: fixed;
+  z-index: 10;
+  top: 90vh;
+  color: #fff;
+  background: #5fb523;
+  margin: 0 auto;
+  padding: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  background: #f9fbfd;
+  color: #434b54;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+}

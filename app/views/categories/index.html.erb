@@ -1,13 +1,15 @@
-<!-- app/views/categories/index.html.erb -->
-<h1>Categories</h1>
+<div class="devise-head">
+  <i class="fa-solid fa-bars"></i>
+  <h1>Categories</h1>
+  <i class="fa-solid fa-magnifying-glass"></i>
+</div>
 
 <% @categories.each do |category| %>
-  <div>
-    <h3><%= category.name %></h3>
-    <p>Icon: <%= category.icon %></p>
-    <p>Total Amount: <%= category.entities.sum(:amount) %></p>
-    <%= link_to "View Entities", category_entities_path(category) %>
-  </div>
+  <a href="<%= category_entities_path(category)%>" class="card">
+    <p class="icon"><i class="<%= category.icon %>"></i></p>
+    <h3 class="card-title"><%= category.name %></h3>
+    <p>Total Amount: $<%= category.entities.sum(:amount) %></p>
+  </a>
 <% end %>
 
-<%= link_to "Add a new category", new_category_path %>
+<%= link_to "Add a new category", new_category_path, class: "new-category" %>

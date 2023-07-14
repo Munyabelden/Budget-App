@@ -1,16 +1,10 @@
-# app/controllers/categories_controller.rb
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @categories = Category.includes(:entities)
-  end
-
-  def show
-    @category = Category.find(params[:id])
-    @transactions = @category.entities.order(created_at: :desc)
-    @total_amount = @category.entities.sum(:amount)
-  end
+    @user = current_user
+    @categories = @user.categories.includes(:entities)
+  end  
 
   def new
     @category = Category.new
