@@ -1,15 +1,16 @@
 <div class="devise-head">
-  <i class="fa-solid fa-bars"></i>
+  <h3><%= @user.name %>'s</h3>
   <h1>Categories</h1>
-  <i class="fa-solid fa-magnifying-glass"></i>
+  <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
 </div>
-
+<div class="card-container">
 <% @categories.each do |category| %>
   <a href="<%= category_entities_path(category)%>" class="card">
-    <p class="icon"><i class="<%= category.icon %>"></i></p>
+    <%= image_tag(category.icon, alt: "Icon", class: "icon") %>
     <h3 class="card-title"><%= category.name %></h3>
     <p>Total Amount: $<%= category.entities.sum(:amount) %></p>
   </a>
 <% end %>
+</div>
 
 <%= link_to "Add a new category", new_category_path, class: "new-category" %>

@@ -1,10 +1,7 @@
-<div class="devise-head">
-  <a class="back" href="<%= root_path %>"><i class="fa-solid fa-arrow-left"></i></a>
-  <h2 class="devise-title">LOGIN</h2>
-  <span>Log In</span>
-</div>
 <section class="devise-form">
+<a class="back" href="<%= root_path %>">&#8592;</a>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <h2 class="devise-title">LOGIN</h2>
   <div class="field">
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
   </div>
@@ -17,7 +14,7 @@
     <%= f.submit "Log in", class: "submit-button" %>
   </div>
 <% end %>
-</section>
-<div class="add-ons">
+<div class="add-ons session">
   <%= render "devise/shared/links" %>
 </div>
+</section>

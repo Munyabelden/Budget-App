@@ -1,5 +1,5 @@
-<div class="devise-head">
-  <a class="back" href="<%= categories_path %>"><i class="fa-solid fa-arrow-left"></i></a>
+<div class="categories">
+  <a class="back" href="<%= categories_path %>">&#8592;</a>
   <h2 class="devise-title">Create Category</h2>
   <span></span>
 </div>
@@ -21,7 +21,7 @@
   </div>
 
   <div class="field">
-    <%= form.select :icon, options_for_select([['Rentals', 'fa-solid fa-truck-moving'], ['lesure', 'fa-solid fa-icons'], ['Food', 'fa-solid fa-cart-shopping'], ['Clothes', 'fa-solid fa-clothes-hanger'], ['House bills', 'fa-solid fa-money-bill'], ['Body Care', 'fa-solid fa-kidneys'], ['Family Finance', 'fa-solid fa-family']]) %>
+    <%= form.select :icon, options_for_select([['Rentals', 'clapperboard_2886875.png'], ['lesure', 'rental_3524929.png'], ['Food', 'pizza.png'], ['Clothes', 'clothes-hanger.png'], ['House bills', 'rental.png'], ['Phone Bill', 'phone-call.png'], ['Car Maintance', 'car.png']]) %>
   </div>
 
   <div class="actions">
