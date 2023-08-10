@@ -1,0 +1,36 @@
+<div class="categories">
+  <a class="back" href="<%= category_entities_path(@category) %>">&#8592;</a>
+  <h2 class="devise-title">Create Transaction</h2>
+  <span></span>
+</div>
+<section class="devise-form">
+<%= form_with(model: [@category, @entity], url: category_entities_path(@category)) do |form| %>
+  <% if @entity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@entity.errors.count, "error") %> prohibited this entity from being saved:</h2>
+      <ul>
+        <% @entity.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_field :name, placeholder: "Transaction name" %>
+  </div>
+
+  <div class="field">
+    <%= form.number_field :amount, placeholder: "Amount" %>
+  </div>
+
+  <div class="field">
+    <%= form.select :category_ids, options_from_collection_for_select(Category.all, :id, :name) %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit "Save", class: "submit-button" %>
+  </div>
+<% end %>
+</section>

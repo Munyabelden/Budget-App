@@ -1,9 +1,16 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
   devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_scope :user do
+    get '/users/sign_out', to: 'devise/sessions#destroy'
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  unauthenticated do
+    root to: 'home#index', as: 'home_root'
+  end
+
+  root 'categories#index'
+
+  resources :categories, only: %i[index new create] do
+    resources :entities, only: %i[index show new create]
+  end
 end

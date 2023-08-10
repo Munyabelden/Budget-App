@@ -1,0 +1,19 @@
+<div class="devise-head">
+  <a class="back" href="<%= categories_path %>">&#8592;</a>
+  <h1>Transactions</h1>
+  <i class="fa-solid fa-magnifying-glass"></i>
+</div>
+
+<div class="category-card">
+  <h2><%= @category.name %></h2>
+  <strong>Total Amount: $<%= @total_amount %></strong>
+</div>
+
+<% @entities.each do |transaction| %>
+  <a class="card" href="<%= category_entity_path(@category, transaction)%>">
+    <h2><%= transaction.name %></h2>
+    <span>$<%= transaction.amount %></span>
+  </a>
+<% end %>
+
+<%= link_to "Add a new transaction", new_category_entity_path(@category), class: "new-category" %>

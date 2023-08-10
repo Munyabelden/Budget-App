@@ -1,0 +1,32 @@
+<div class="categories">
+  <a class="back" href="<%= categories_path %>">&#8592;</a>
+  <h2 class="devise-title">Create Category</h2>
+  <span></span>
+</div>
+<section class="devise-form">
+<%= form_with(model: @category, url: categories_path) do |form| %>
+  <% if @category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+      <ul>
+        <% @category.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_field :name, placeholder: "Category name" %>
+  </div>
+
+  <div class="field">
+    <%= form.select :icon, options_for_select([['Rentals', 'clapperboard_2886875.png'], ['lesure', 'rental_3524929.png'], ['Food', 'pizza.png'], ['Clothes', 'clothes-hanger.png'], ['House bills', 'rental.png'], ['Phone Bill', 'phone-call.png'], ['Car Maintance', 'car.png']]) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Save", class: "submit-button" %>
+  </div>
+<% end %>
+</section>
+
